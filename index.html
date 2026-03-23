@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Solar Savings Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>☀️ Solar Savings Calculator</h1>
+      <p>Estimate how much you can save by switching to solar energy in Turkey</p>
+    </header>
+
+    <div class="form-box">
+
+      <label for="city">Your City</label>
+      <select id="city">
+        <option value="istanbul">Istanbul</option>
+        <option value="ankara">Ankara</option>
+        <option value="izmir">Izmir</option>
+        <option value="antalya">Antalya</option>
+        <option value="adana">Adana</option>
+        <option value="konya">Konya</option>
+      </select>
+
+      <label for="bill">Monthly Electricity Bill (TL)</label>
+      <input type="number" id="bill" placeholder="e.g. 1500" min="0" />
+
+      <label for="roof">Available Roof Size (m²)</label>
+      <input type="number" id="roof" placeholder="e.g. 30" min="0" />
+
+      <button onclick="calculate()">Calculate Savings</button>
+
+    </div>
+
+    <div class="results" id="results" style="display:none;">
+
+      <h2>Your Estimated Results</h2>
+
+      <div class="result-grid">
+        <div class="card">
+          <span class="icon">⚡</span>
+          <h3 id="energy-output">-</h3>
+          <p>Monthly Energy Output (kWh)</p>
+        </div>
+        <div class="card">
+          <span class="icon">💰</span>
+          <h3 id="monthly-saving">-</h3>
+          <p>Monthly Savings (TL)</p>
+        </div>
+        <div class="card">
+          <span class="icon">📅</span>
+          <h3 id="payback">-</h3>
+          <p>Estimated Payback Period</p>
+        </div>
+        <div class="card">
+          <span class="icon">🌱</span>
+          <h3 id="co2">-</h3>
+          <p>CO₂ Offset per Year (kg)</p>
+        </div>
+      </div>
+
+      <div class="tip" id="tip"></div>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
